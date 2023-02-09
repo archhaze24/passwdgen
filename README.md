@@ -21,7 +21,7 @@ Options:
 ```
 
 # Building:
-Prerequisites: [Rust nightly toolchain](https://rustup.rs/).
+Prerequisites: [Rust toolchain](https://rustup.rs/).
 
 `cargo build --release`
 
