@@ -51,7 +51,7 @@ pub fn start(args: Args) {
     }
 }
 
-pub fn compose_characters(args: &Args) -> Vec<char> {
+fn compose_characters(args: &Args) -> Vec<char> {
     let lowercase: &str = if !args.remove_lowercase {
         if args.remove_similar {
             "abcdefghjkmnpqrstuvwxyz"
@@ -93,7 +93,7 @@ pub fn compose_characters(args: &Args) -> Vec<char> {
     characters.chars().collect()
 }
 
-pub fn generate(characters: &Vec<char>, length: u32) -> String {
+fn generate(characters: &Vec<char>, length: u32) -> String {
     let mut password = String::new();
     let mut rng = rand::thread_rng();
 
