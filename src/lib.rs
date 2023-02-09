@@ -30,17 +30,8 @@ pub struct Args {
 }
 
 pub fn start(args: Args) {
-    let quantity: u32 = if args.quantity.is_some() {
-        args.quantity.unwrap()
-    } else {
-        1
-    };
-
-    let length: u32 = if args.length.is_some() {
-        args.length.unwrap()
-    } else {
-        16
-    };
+    let quantity: u32 = args.quantity.unwrap_or(1);
+    let length: u32 = args.length.unwrap_or(16);
 
     if args.remove_uppercase
         && args.remove_lowercase
@@ -98,9 +89,8 @@ pub fn compose_characters(args: &Args) -> Vec<char> {
     };
 
     let characters = String::from("") + lowercase + uppercase + special + numbers;
-    let characters: Vec<char> = characters.chars().collect();
 
-    characters
+    characters.chars().collect()
 }
 
 pub fn generate(characters: &Vec<char>, length: u32) -> String {
